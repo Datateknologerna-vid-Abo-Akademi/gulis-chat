@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gulis-chat server</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+    <h1>gulis-chat server</h1>
+    <h2>API reference</h2>
+</header>
+<section>
+    <article>
+        <h3>/get</h3>
+        <p>Get new messages in channel. If param 'last' is defined, gets messages newer than 'last'.</p>
+        <p>Method: <strong>GET</strong></p>
+        <p>Params:</p>
+        <div class="params">
+            <p><strong>channel</strong>: string, required</p>
+            <p><strong>last</strong>: int64, optional</p>
+        </div>
+        <p>Return: <strong>JSON</strong> array of messages or error</p>
+    </article>
+    <article>
+        <h3>/past</h3>
+        <p>Get old messages in channel. If 'before' is defined, get messages older then 'before'. Param 'count' limits number of messages returned, default 100.</p>
+        <p>Method: <strong>GET</strong></p>
+        <p>Params:</p>
+        <div class="params">
+            <p><strong>channel</strong>: string, required</p>
+            <p><strong>before</strong>: int64, optional</p>
+            <p><strong>count</strong>: int, optional, default=100</p>
+        </div>
+        <p>Return: <strong>JSON</strong> array of messages or error</p>
+    </article>
+    <article>
+        <h3>/send</h3>
+        <p>Send message to channel.</p>
+        <p>Method: <strong>POST</strong></p>
+        <p>Params:</p>
+        <div class="params">
+            <p><strong>channel</strong>: string, required</p>
+            <p><strong>sender</strong>: string, required</p>
+            <p><strong>content</strong>: string, required</p>
+        </div>
+        <p>Return: <strong>JSON</strong> message or error</p>
+    </article>
+    <article>
+        <h3>message</h3>
+        <p>Type: <strong>JSON object</strong></p>
+        <p>Values:</p>
+        <div class="params">
+            <p><strong>id</strong>: int64</p>
+            <p><strong>channel</strong>: string</p>
+            <p><strong>sender</strong>: string</p>
+            <p><strong>content</strong>: string</p>
+            <p><strong>time</strong>: string, RFC3339 timestamp</p>
+        </div>
+    </article>
+    <article>
+        <h3>error</h3>
+        <p>Type: <strong>JSON object</strong></p>
+        <p>Values:</p>
+        <div class="params">
+            <p><strong>error</strong>: string</p>
+        </div>
+    </article>
+</section>
+<footer>
+    <a href="https://github.com/Datateknologerna-vid-Abo-Akademi/gulis-chat">View on GitHub</a>
+</footer>
+</body>
+</html>

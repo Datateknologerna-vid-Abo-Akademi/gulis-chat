@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+}
+
+header {
+    background: beige;
+    border-bottom: 2px solid dodgerblue;
+    padding: 20px;
+}
+
+section {
+    padding: 20px 20px 10px;
+}
+
+article {
+    line-height: 1.5rem;
+    padding: 10px;
+    background: lavender;
+    border: 1px solid dodgerblue;
+    margin-bottom: 10px;
+}
+
+footer {
+    padding: 10px;
+    background: #adadbc;
+    border: 1px solid dodgerblue;
+}
+
+.params {
+    padding-left: 10px;
+}
