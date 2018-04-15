@@ -2,7 +2,7 @@
 
 Server for the gulis-chat course. The running requires [Docker](https://docker.com) or [Go](https://golang.org) to be installed.
 
-[localhost:8080](http://localhost:8080)
+[localhost:8080](http://localhost:10080)
 
 ## Docker
 
@@ -27,7 +27,7 @@ Builds the docker image.
 Use absolute path with `-v`. This command works on Linux and macOS.
 
 ```sh
-docker run --rm -p 8080:8080 -v "$(pwd)"/db:/root/db -t gulis-chat/server
+docker run --rm -p 10080:10080 -v "$(pwd)"/db:/root/db -t gulis-chat/server
 ```
 
 Starts a container from the image built.
