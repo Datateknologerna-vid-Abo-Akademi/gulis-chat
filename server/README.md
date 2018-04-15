@@ -53,7 +53,7 @@ docker ps
 Stop the process
 
 ```sh
-docker stop <containerID>
+docker stop [containerID]
 ```
 
 ## Go
@@ -73,3 +73,49 @@ go run server.go
 ```sh
 go build server.go -o server; ./server
 ```
+
+## Deployment with docker
+
+Run these from the `server` directory!
+
+### On local machine
+
+Create a alpine image:
+
+```sh
+docker build -t gulis-chat/server . -f docker/Dockerfile.multi
+```
+
+Save the image:
+
+```sh
+docker save gulis-chat/server > gulis-chat-server.tar
+```
+
+Copy the `gulis-chat-server.tar` file to the server.
+
+### On server
+
+Locate the `gulis-chat-server.tar` and load to docker:
+
+```sh
+docker load -i gulis-chat-server.tar
+```
+
+Make sure there is a directory for the DB, otherwise, make one.
+
+Create a container:
+
+```sh
+docker create -v /absolute/path/to/db/direcrory:/root/db -p 10080:10080 gulis-chat/server
+```
+
+This should return the container ID, else get it with `docker ps`.
+
+Start the container:
+
+```sh
+docker start [container ID]
+```
+
+Make sure the port is open

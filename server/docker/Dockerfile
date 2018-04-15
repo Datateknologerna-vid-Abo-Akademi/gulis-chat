@@ -18,6 +18,6 @@ RUN mkdir /root/db
 
 VOLUME /root/db
 
-EXPOSE 8080
+EXPOSE 10080
 
 ENTRYPOINT ["./server"]
