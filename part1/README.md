@@ -8,7 +8,7 @@ If everything is set up, let's get started!
 
 Let's start by exploring the API of our server.
 
-Visit [localhost:8080](http://localhost:8080) and take a look at the API reference.
+Visit [37.59.100.46:10080](http://37.59.100.46:10080) and take a look at the API reference.
 
 ### Endpoints
 
@@ -34,7 +34,7 @@ In Insomnia, create a new folder, let's call it `gulis-chat`.
 
 Add a request inside the folder, name it `send`, select `POST` as the method and select `Form` as the body.
 
-In the upper bar, add the URL `http://localhost:8080/send`.
+In the upper bar, add the URL `http://37.59.100.46:10080/send`.
 
 Now, before we fill anything in the form, let's try sending an empty request body to the server.
 Click the send button next to the URL field to see what happens.
@@ -78,8 +78,9 @@ We will therefore add two new requests to our `gulis-chat` folder in Insomnia.
 
 Name them `get` and `past` and let the method be `GET`.
 
-For `get`, the URL is `http://localhost:8080/get`.
-For `past`, the URL is `http://localhost:8080/past`.
+For `get`, the URL is `http://37.59.100.46:10080/get`.
+
+For `past`, the URL is `http://37.59.100.46:10080/past`.
 
 Becouse these are the `GET` methods, we will not be sending a form. Rather, the parameters are added to the URL.
 To see how this works, select the Query tab in Insomnia. 
