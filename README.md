@@ -28,7 +28,7 @@ If the graphical user interface seems like a too difficult topic, you can always
 
 This course is in Python, therefore Python must be installed on your computer.
 
-We also recommend using PyChar IDE for this course. Learn more about what it is and how to get it, [here](https://datateknologerna-vid-abo-akademi.github.io/gulis/TOOLS.html#jetbrains).
+We also recommend using PyCharm IDE for this course. Learn more about what it is and how to get it, [here](https://datateknologerna-vid-abo-akademi.github.io/gulis/TOOLS.html#jetbrains).
 
 Another tool we recommend and will be using in this course, is [Insomnia REST Client](https://insomnia.rest).
 
