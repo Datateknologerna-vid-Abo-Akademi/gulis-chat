@@ -27,7 +27,7 @@ Builds the docker image.
 Use absolute path with `-v`. This command works on Linux and macOS.
 
 ```sh
-docker run --rm -p 10080:10080 -v "$(pwd)"/db:/root/db -t gulis-chat/server
+docker run --rm -p 10080:10080 -v "$(pwd)"/db:/root/db -it gulis-chat/server
 ```
 
 Starts a container from the image built.
@@ -38,7 +38,7 @@ Starts a container from the image built.
 
 **-v** links host and container volumes, this way the DB file exists on host machine
 
-**-t** specifies which image to start based on tag
+**-it** allocate a tty
 
 ### Stop
 
