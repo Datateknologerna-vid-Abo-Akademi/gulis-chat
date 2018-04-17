@@ -75,6 +75,7 @@ func handleGet(w http.ResponseWriter, r *http.Request) {
 
 	if len(channel) == 0 {
 		sendErrorJSON(w, "Channel empty", http.StatusBadRequest)
+		return
 	}
 
 	if len(lastStr) != 0 {
@@ -108,6 +109,7 @@ func handlePast(w http.ResponseWriter, r *http.Request) {
 
 	if len(channel) == 0 {
 		sendErrorJSON(w, "Channel empty", http.StatusBadRequest)
+		return
 	}
 
 	if len(countStr) != 0 {
@@ -138,23 +140,36 @@ func handlePast(w http.ResponseWriter, r *http.Request) {
 	sendJSON(w, msgs, http.StatusOK)
 }
 
+type jsonError struct {
+	Error string `json:"error"`
+}
+
 func sendJSON(w http.ResponseWriter, item interface{}, code int) error {
-	data, err := json.Marshal(item)
+	marshaled, err := json.Marshal(&item)
+
 	if err != nil {
+		sendErrorJSON(w, "Internal server error", http.StatusInternalServerError)
 		return err
 	}
 
-	w.Header().Add("Content-type", "json")
+	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(code)
-	_, err = w.Write(data)
+	_, err = w.Write(marshaled)
 	return err
 }
 
-func sendErrorJSON(w http.ResponseWriter, err string, code int) error {
-	type eroor struct {
-		Error string `json:"error"`
+func sendErrorJSON(w http.ResponseWriter, e string, code int) error {
+	marshaled, err := json.Marshal(&jsonError{Error:e})
+
+	if err != nil {
+		marshaled = []byte("{\"error\":\"Internal server error\"}")
+		code = http.StatusInternalServerError
 	}
-	return sendJSON(w, eroor{err}, code)
+
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(code)
+	_, err = w.Write(marshaled)
+	return err
 }
 
 func formValue(r *http.Request, key string) string {
