@@ -102,20 +102,18 @@ Locate the `gulis-chat-server.tar` and load to docker:
 docker load -i gulis-chat-server.tar
 ```
 
+**Save and move to server the haxx way:**
+
+```sh
+docker save gulis-chat/server | bzip2 | ssh user@host 'bunzip2 | docker load'
+```
+
 Make sure there is a directory for the DB, otherwise, make one.
 
-Create a container:
+Run the container:
 
 ```sh
-docker create -v /absolute/path/to/db/direcrory:/root/db -p 10080:10080 gulis-chat/server
+docker run -d -v /absolute/path/to/db/direcrory:/root/db -p 10080:10080 gulis-chat/server
 ```
 
-This should return the container ID, else get it with `docker ps`.
-
-Start the container:
-
-```sh
-docker start [container ID]
-```
-
-Make sure the port is open
+Make sure the port is open!
