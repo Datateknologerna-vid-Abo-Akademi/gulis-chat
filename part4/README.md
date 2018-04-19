@@ -22,13 +22,33 @@ To create a thread, we do:
 my_thread = threading.Thread(target=function_name, args=(arg1, arg2))
 ```
 
-Then, we need to start our thread. This is quite obvious:
+Next, we need to start our thread. If we do it now, the thread will run in the background even if our main program exits.
+In this application we do not want this, therefore we add the following:
+
+```python
+my_thread.daemon = True
+```
+
+Now, we can start our thread:
 
 ```python
 my_thread.start()
 ```
 
-Try doing this with our `update` function. The output should be the same as before.
+Try doing this with our `update` function.
+
+At this point, our program will terminate after it has started the thread. This is because there is nothing more tu run on the main thread, therefore it exits.
+
+We can fix this by adding an infinite loop at the end:
+
+```python
+my_thread.start()
+
+while True:
+    pass
+```
+
+With our loop in place, the program should continuously fetch new messages.
 
 ## 4.2 Thread locks
 
