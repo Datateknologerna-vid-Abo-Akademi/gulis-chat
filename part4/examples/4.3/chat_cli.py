@@ -105,6 +105,8 @@ lock = threading.Lock()
 
 updateThread = threading.Thread(target=update, args=(server_url, chat_channel, 2, lock))
 
+updateThread.daemon = True
+
 updateThread.start()
 
 while True:
