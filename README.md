@@ -39,6 +39,7 @@ This course is split up in parts and each part has it's own folder in this repos
 All parts have README.md files, which contain the main content. Additionally there can be code examples or other additional files in each part.
 
 You can either read the README's in each part via GitHub, or you can clone this repository and read them from your computer.
+
 ````sh
 git clone https://github.com/Datateknologerna-vid-Abo-Akademi/gulis-chat
 ````
