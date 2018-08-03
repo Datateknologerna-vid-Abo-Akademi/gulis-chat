@@ -2,7 +2,7 @@
 
 Now that our CLI chat client is ready, we wil move on to creating a simple GUI.
 
-There are many options when it comes to creating a GUI in Python, but we will use Tkinter, which comes bundled with Python. Ig you wish to use something else, [here are some alternatives](https://docs.python.org/2/faq/gui.html).
+There are many options when it comes to creating a GUI in Python, but we will use Tkinter, which comes bundled with Python. If you wish to use something else, [here are some alternatives](https://docs.python.org/2/faq/gui.html).
 
 In this part we create the GUI for our client and in part 6, we add functionality to it, so lets get cracking!
 
@@ -169,7 +169,7 @@ Otto
 
 Now, this is not a tutorial on how classes work in Python, so I will not go deeper on this. I will however remind you that `self` refers to the class/object instance itself.
 
-TODO: Find something cool about classes and link it here
+Extra reading, Improve Your Python: [Python Classes and Object Oriented Programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
 
 Anyway, let's add some things to our class so we can test it.
 
