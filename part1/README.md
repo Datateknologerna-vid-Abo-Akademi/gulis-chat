@@ -8,7 +8,7 @@ If everything is set up, let's get started!
 
 Let's start by exploring the API of our server.
 
-Visit [37.59.100.46:10080](http://37.59.100.46:10080) and take a look at the API reference.
+Visit ~37.59.100.46:10080~ ([Update with new IP](https://github.com/Datateknologerna-vid-Abo-Akademi/gulis-chat/issues/8)) and take a look at the API reference.
 
 ### Endpoints
 
